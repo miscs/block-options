@@ -3,7 +3,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
+#: src/extensions/formats/character-map/components/controls.js:21
+msgid "Special Characters"
+msgstr ""
+
 #: src/extensions/formats/character-map/components/controls.js:18
 #: src/extensions/formats/character-map/index.js:18
-msgid "Special Characters"
+msgid "Insert Special Characters"
 msgstr ""

@@ -2,11 +2,14 @@
  * External dependencies
  */
 import { get } from 'lodash';
+// import { CharacterMap } from 'react-character-map';
+import Chars from '../../../../../node_modules/react-character-map/dist/component/chars.json';
 
 /**
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
+const { getRectangleFromRange } = wp.dom;
 const { Component, Fragment } = wp.element;
 const { select, withSelect } = wp.data;
 const { RichTextToolbarButton } = wp.blockEditor;
@@ -33,21 +36,36 @@ class CharacterMapControls extends Component {
 			isOpen: !state.isOpen,
 		}));
 	}
-
 	render() {
 		const { isOpen } = this.state;
 		const {
 			value,
 			onChange,
+			isActive,
+			onToggle,
 		} = this.props;
-
+		
+		console.log(isOpen);
 		return (
-			<RichTextToolbarButton
-				icon="editor-customchar"
-				title={title}
-				onClick={() => {} }
-				// isActive={isBlockJustified}
-			/>
+			<Fragment>
+				<RichTextToolbarButton
+					icon="editor-customchar"
+					title={title}
+					onClick={this.toggle}
+					// isActive={isBlockJustified}
+				/>
+				{isOpen && (
+					<Popover
+						position="bottom center"
+						className="components-editorskit__inline-character-map"
+						focusOnMount="container"
+						expandOnMobile={true}
+						key="charmap-popover"
+					>
+						asdfasd
+					</Popover>
+				)}
+			</Fragment>
 		);
 	}
 }
