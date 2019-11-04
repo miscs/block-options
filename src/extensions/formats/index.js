@@ -13,6 +13,7 @@ import { uppercase } from './uppercase';
 import { link } from './link';
 import { alignment } from './alignment';
 import { nbsp } from './nbsp';
+import { characterMap } from './character-map';
 
 /**
  * WordPress dependencies
@@ -36,6 +37,7 @@ function registerEditorsKitFormats() {
 		alignment,
 		nbsp,
 		! isDisabled ? link : [],
+		characterMap,
 	].forEach( ( { name, ...settings } ) => {
 		if ( name ) {
 			registerFormatType( name, settings );
